@@ -5,14 +5,15 @@
 // Output: [1,2]
 
 function isTarget (nums, target){
-    let arr = [];
-    for ( let i = 0; i < nums.length; i++){
-        for (let j = i+1; j < nums.length; j++ ){
-           if (nums[i] + nums[j] == target){
-             arr.push(i, j);
-           }
+    
+    for ( let i = 0; i < nums.length - 1 ; i++){
+           if (nums[i] + nums[i+1] == target){
+           return [i, i + 1];
+          
         }
     }
-    return arr;
+      return [];
+    
+    
 }
-console.log(isTarget([3, 2, 5], 6))
+console.log(isTarget([3, 2, 4], 6))
